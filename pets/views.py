@@ -26,7 +26,7 @@ def rename(request):
     i = request.POST['id']
     r = request.POST['rename']
     if len(r) > 45:
-        messages.error(request, 'Insufficient energy.')
+        messages.error(request, 'Name must be less than 45 characters')
         return redirect(f'/pets/{i}/edit/')
     p = Pet.objects.get(id = i)
     p.name = r
