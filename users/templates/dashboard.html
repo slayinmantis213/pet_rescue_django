@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{request.session.username}}'s Dashboard</title>
+    {% load bootstrap5 %}
+    {% bootstrap_css %}
+    {% bootstrap_javascript %}
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'users/css/dashboard.css' %}">
+</head>
+
+<body>
+    <div class="d-flex align-items-center title justify-content-between">
+        <div class="d-flex align-items-center">
+            <img src="{% static 'users/css/images/pet-logo.png' %}" alt="heart logo" class="logo">
+            <h1>Dashboard</h1>
+        </div>
+        <a href="{% url 'users:logout' %}"
+            class="logout btn btn-dark d-flex align-items-center justify-content-center">Log Out</a>
+    </div>
+    <div class="container d-flex justify-content-between gap-5 flex-wrap">
+        <div class="pets">
+            <div class="mt-5 d-flex align-items-center">
+                <a href="{% url 'pets:find' %}" class="logout btn btn-dark">Rescue</a>
+                <h4  class="d-flex align-items-end" style="color: #5efc8d;">
+                    <img src="{% static '/pets/css/images/gift.gif' %}" alt="gift gif" class="feather">
+                    {{user.gifts}}
+                </h4>
+                {% if messages %}
+                    {% for message in messages%}
+                    <p style="color: white;">{{message}}</p>
+                    {% endfor %}
+                {% endif %}
+            </div>
+            {% for pet in pets %}
+            <div class="pet d-flex p-4 mt-4 align-items-center justify-content-between">
+                    <div class="d-flex flex-column align-items-center">
+                        <h3>{{pet.name}}</h3>
+                        <img class="pet-avatar" src="{% static pet.avatar %}" alt="pet-avatar">
+                    </div>
+                    <ul class="p-4">
+                        <li>Type: {{pet.pet_type}}</li>
+                        <li>Level: {{pet.level}}</li>
+                        <li>Health: {{pet.health}}</li>
+                        <li>Happiness: {{pet.happiness}}</li>
+                        <li>Energy: {{pet.energy}}</li>
+                    </ul>
+
+                <div class="actions">
+                    <a href="{% url 'pets:visit' pet.id %}" class="btn btn-dark">
+                        Visit
+                    </a>
+                    <a href="{% url 'pets:edit' pet.id %}" class="btn btn-dark">Change Name</a>
+                    <a href="{% url 'pets:release' pet.id %}" class="btn btn-dark">Release</a>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+        <div class="user-info mt-5 p-4">
+            <div class="d-flex align-items-center">
+                <div class="avatar"></div>
+                <h3 style="color: #5efc8d; margin-right: 1rem;">{{request.session.username}}</h3>
+                <a href="/new_user/" style="color: #fba860;">Help</a>
+            </div>
+            <div style="color: #5efc8d;" class="d-flex align-items-center justify-content-around">
+                <p class="d-flex align-items-center" style="font-size: 15pt; font-weight: bold;">
+                    <img src="{% static '/users/css/images/pet-logo.png' %}" alt="logo-image" class="feather">
+                    {{pets|length}}
+                </p>
+                <p class="d-flex align-items-center" style="font-size: 15pt; font-weight: bold;">
+                    <img src="{% static '/pets/css/images/feather.png' %}" alt="feather-image" class="feather">
+                    {{user.feathers}}
+                </p>
+            </div>
+            <div class="friends p-3 mt-3">
+                <h3>(friends coming soon)</h3>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

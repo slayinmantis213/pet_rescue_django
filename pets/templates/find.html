@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{request.session.username}}'s Dashboard</title>
+    {% load bootstrap5 %}
+    {% bootstrap_css %}
+    {% bootstrap_javascript %}
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'pets/css/find.css' %}">
+</head>
+<body>
+    <div class="d-flex align-items-center title justify-content-between flex-wrap">
+        <div class="d-flex align-items-center">
+            <img src="{% static 'users/css/images/pet-logo.png' %}" alt="heart logo" class="logo">
+        </div>
+        <a href="{% url 'users:dashboard' %}" class="logout btn btn-dark d-flex align-items-center justify-content-center">
+            Dashboard
+        </a>
+        <a href="{% url 'users:logout' %}" class="logout btn btn-dark d-flex align-items-center justify-content-center">
+            Log Out
+        </a>
+    </div>
+    <div class="container d-flex flex-column align-items-center mt-4">
+        <div class="text-center find-info">
+            <h2 style="color: #53fc8d;">These animals need your help!</h2>
+            <p style="color: #53fc8d; font-style: italic;">
+                Every animal in need deserves a place to get back on their feet.  Sadly you can only bring one home for now...
+            </p>
+            <h2 style="color: #fba860;">Choose a pet:</h2>
+        </div>
+        {% for option in options %}
+        <form action="/pets/rescue/" method="post">
+            <div class="pet d-flex p-4 mt-3 align-items-center justify-content-between">
+                {% csrf_token %}
+                <div class="d-flex align-items-end">
+                    <div class="d-flex flex-column align-items-center">
+                        <h3>{{option.0}}</h3>
+                        <div class="pet-avatar">
+                            <img  class="pet-avatar" src="{% static option.1 %}" alt="">
+                        </div>
+                    </div>
+                </div>
+                <input type="submit" value="Rescue" class="btn btn-dark">
+            </div>
+            <input type="hidden" name="pet" value="{{option.0}}">
+        </form>
+        {% endfor %}
+
+    </div>
+</body>
+</html>

@@ -1,0 +1,76 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    background-color: #403D58;
+}
+
+.title{
+    background-color: #4e4187 ;
+    color:#5EFC8D;
+    font-style: italic;
+}
+
+.logo{
+    width: 40%;
+    margin: 1rem;
+    margin-right: 2rem;
+}
+
+.logout{
+    height: 3rem;
+    width: 12rem;
+    /* margin-right: 4rem; */
+    font-style: normal;
+    font-size: 15pt;
+    font-weight: 700;
+    box-shadow: 1px 1px 4px white;
+    border: 1px solid #5efc8d;
+}
+
+.pet-window{
+    outline: 2px solid #5efc8d;
+    background-color: black;
+    height: 28rem;
+    min-width:30rem;
+    max-width: 100%;
+}
+
+.pet-buttons{
+    height: 6rem;
+    min-width:30rem;
+    max-width: 100%;
+    border-top: 2px solid #5efc8d;
+    padding: .2rem;
+}
+
+.pet-action{
+    flex: 1;
+    border: .2rem solid hotpink;
+    outline: 2px solid black;
+    z-index: +1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.mood-gif{
+    height: 15%;
+    width: 15%;
+}
+
+.pet-img{
+    max-height:60%;
+    max-width: 80%;
+    object-fit: cover;
+}
+
+.pet-stats{
+    font-size: 20pt;
+    color: hotpink;
+    list-style: none;
+    font-weight: bold;
+}

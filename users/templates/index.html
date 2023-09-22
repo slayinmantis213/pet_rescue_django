@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+    
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Index</title>
+    {% load bootstrap5 %}
+    {% bootstrap_css %}
+    {% bootstrap_javascript %}
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'users/css/index.css' %}">
+</head>
+
+<body>
+    <div class="d-flex title justify-content-center">
+        <h1 class="text-center p-3 mt-2">Welcome to Pet Rescue</h1>
+        <img src="{% static 'users/css/images/pet-logo.png' %}" alt="heart logo" class="logo">
+    </div>
+    <div class="container d-flex justify-content-around align-items-center mt-5">
+        <div class="login mt-5 d-flex flex-column align-items-center">
+            <h1 class="text-center">Log in</h1>
+            <form action="/login/" method="post" class="d-flex flex-column">
+                {% csrf_token %}
+                <label for="email">Email:</label>
+                <input type="text" name="email">
+                <label for="password" class="mt-3">Password:</label>
+                <input type="password" name="password">
+                <input type="submit" value="Log in" class="mt-4 btn btn-dark">
+            </form>
+
+        </div>
+        <div class="register mt-3 mb-3 d-flex flex-column align-items-center">
+            <h1>Not a member?</h1>
+            <form action="/register/" method="post" class="d-flex flex-column">
+                {% csrf_token %}
+                <label for="username" class="mt-3">Username:</label>
+                <input type="text" name="username">
+                <label for="email" class="mt-3">Email:</label>
+                <input type="text" name="email">
+                <label for="password" class="mt-3">Password:</label>
+                <input type="password" name="password">
+                <label for="pw_confirm" class="mt-3">Confirm Password:</label>
+                <input type="password" name="pw_confirm">
+                <input type="submit" value="Register" class="mt-4 btn btn-dark">
+            </form>
+            {% if messages %}
+            <ul>
+                {% for message in messages%}
+                <li>{{message}}</li>
+                {% endfor %}
+            </ul>
+            {% endif %}
+        </div>
+
+    </div>
+</body>
+
+</html>

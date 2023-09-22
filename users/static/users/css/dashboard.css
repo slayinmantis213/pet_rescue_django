@@ -1,0 +1,104 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.w-100{
+    width: 100%;
+}
+
+body{
+    background-color: #403D58;
+}
+
+.logo{
+    width: 20%;
+    margin: 1rem;
+    margin-right: 2rem;
+}
+
+.logo-help{
+    height:5rem;
+    margin-right: 1rem;
+}
+
+span{
+    color: #53fc8d;
+    font-weight: bold;
+}
+
+.title{
+    background-color: #4e4187 ;
+    color:#5EFC8D;
+    font-style: italic;
+}
+
+.container{
+    flex-wrap: wrap;
+    padding-bottom: 1rem;
+}
+
+ul{
+    list-style:circle;
+    background-color: #5EFC8D;
+    border-radius: 1rem;
+}
+
+.pets{
+    flex: 1;
+}
+
+.pet{
+    background-color: #ff69b4;
+    outline: .3rem solid #fba860;
+    border: .2rem solid #53fc8d;
+    border-radius: 1rem;
+}
+
+
+.user-info{
+    flex: .5;
+    background-color: #4e4187 ;
+
+}
+
+.avatar{
+    margin-right: 1rem;
+}
+
+.avatar, .pet-avatar{
+    border-radius: 50%;
+    background-color: black;
+    width: 5rem;
+    height: 5rem;
+}
+
+.logout{
+    height: 3rem;
+    width: 12rem;
+
+    font-style: normal;
+    font-size: 15pt;
+    font-weight: 700;
+    box-shadow: 1px 1px 4px white;
+    border: 1px solid #5efc8d;
+}
+
+.actions{
+    padding: 1rem;
+    background-color:#53fc8d;
+    border-radius: 1rem;
+}
+
+.friends{
+    background-color: #53fc8d;
+}
+
+.friend{
+    background-color: #fba860 ;
+}
+
+.feather{
+    height:4rem;
+    margin-right: .5rem;
+}

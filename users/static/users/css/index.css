@@ -1,0 +1,45 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    background-color: #403D58;
+}
+
+.register, .login{
+    background-color:  hotpink;
+    padding: 2rem;
+    padding-bottom: 5rem;
+    border-radius: 1rem;
+    color:  #4E4187;
+    text-shadow: 0 0 3px white;
+    box-shadow: 1px 2px 3px black;
+    outline: .5rem solid #FBA860;
+}
+
+label{
+    font-weight: 700;
+    font-size: 14pt;
+}
+
+.container{
+    outline: .5rem solid #FBA860;
+    flex-wrap: wrap;
+    background-color: #5EFC8D;
+    padding: 2rem;
+}
+
+.title{
+    background-color: #4E4187 ;
+    color:#5EFC8D;
+    font-size: 45pt;
+    text-shadow: 2px 0 3px hotpink;
+    font-style: italic;
+}
+
+.logo{
+    width: 4%;
+    margin: 1rem;
+    margin-right: 2rem;
+}

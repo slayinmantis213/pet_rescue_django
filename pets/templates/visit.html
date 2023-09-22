@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Visit</title>
+    {% load bootstrap5 %}
+    {% bootstrap_css %}
+    {% bootstrap_javascript %}
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'pets/css/visit.css' %}">
+</head>
+<body>
+    <div class="d-flex align-items-center title justify-content-between flex-wrap">
+        <div class="d-flex align-items-center">
+            <img src="{% static 'users/css/images/pet-logo.png' %}" alt="heart logo" class="logo">
+        </div>
+        <a href="{% url 'users:dashboard' %}" class="logout btn btn-dark d-flex align-items-center justify-content-center">
+            Dashboard
+        </a>
+        <a href="{% url 'users:logout' %}" class="logout btn btn-dark d-flex align-items-center justify-content-center">
+            Log Out
+        </a>
+    </div>
+    <div class="container mt-5 d-flex flex-column align-items-center">
+        
+        <div class="d-flex align-items-end gap-5 flex-wrap justify-content-center">
+            <div>
+                <h2 class="text-center" style="color: hotpink;">{{pet.name}}</h2>
+                {% if messages %}
+                <ul>
+                    {% for message in messages%}
+                    <li style="color: white;">{{message}}</li>
+                    {% endfor %}
+                </ul>
+                {% endif %}
+                <div class="pet-window d-flex flex-column align-items-center justify-content-end">
+                    {% if pet.happiness < happ %}
+                    <img src="{% static 'pets/css/images/sad-gif.gif' %}" alt="mood-gif" class="mood-gif">
+                    {% else %}
+                    <img src="{% static 'pets/css/images/corazon-pixel.gif' %}" alt="mood-gif" class="mood-gif">
+                    {% endif %}
+                    <img src="{% static pet.image %}" alt="pet-img" class="pet-img">
+                    <div class="pet-buttons d-flex gap-2 mt-1">
+                        <a href="{% url 'pets:play' pet.id %}" class="btn btn-dark pet-action" >Play</a>
+                        <a  href="{% url 'pets:train' pet.id %}" class="btn btn-dark pet-action">Train</a>
+                    </div>
+                </div>
+            </div>
+            <table class="p-4 pet-stats table-dark">
+                <tr>
+                    <td style="color: #5efc8d;">Type:</td>
+                    <td  class="p-2">{{pet.pet_type}}</td>
+                </tr>
+                <tr>
+                    <td style="color: #5efc8d;">Level:</td>
+                    <td  class="p-2">{{pet.level}}/10</td>
+                </tr>
+                <tr>
+                    <td style="color: #5efc8d;">Health:</td>
+                    <td class="p-2">{{pet.health}}</td>
+                </tr>
+                <tr>
+                    <td style="color: #5efc8d;">Happiness:</td>
+                    <td class="p-2">{{pet.happiness}}</td>
+                </tr>
+                <tr>
+                    <td style="color: #5efc8d;">Energy:</td>
+                    <td class="p-2">{{pet.energy}}</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</body>
+</html>
