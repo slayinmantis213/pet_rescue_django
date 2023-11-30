@@ -27,22 +27,22 @@
 ## Features
 - Existing users log in and are redirected to the dashboard:
 
-![Login to Dashboard](img\login-gif.gif)
+![Login to Dashboard](img/login-gif.gif)
 
 - Users can spend 5 "gifts" to "rescue" a pet:
 
-![Rescue Pet](img\rescue-gif.gif)
+![Rescue Pet](img/rescue-gif.gif)
 
 - When "rescuing" pets, the user is given 3 random pets to choose from with only their avatar photo and type. The user must choose one.
 - All 12 pet types have a rarity weighting with the rarest pets having the best statistics.
 
 - Users can change the pet's name from the dashboard:
 
-![Edit Name](img\edit-name-gif.gif)
+![Edit Name](img/edit-name-gif.gif)
 
 - Upon confirmation, the user is redirected to the "visit" screen where the pet is displayed along with its name, stats, and a gif to indicate its mood: 
 
-![Pet Screen](img\pet-screen-gif.gif)
+![Pet Screen](img/pet-screen-gif.gif)
 
 - Pets have a simple stat block with current level, health, energy, happiness, and experience.
 - Users can influence these statistics by interacting with the pet via either the "train" or "play" actions as long as the pet has energy.
@@ -50,22 +50,22 @@
 - "Play" awards a small amount of experience, increased health and happiness, and has a high chance of giving the player a "gift".
 - Users can visit any pet in their collection from the dashboard:
 
-![Visit](img\visit-gif.gif)
+![Visit](img/visit-gif.gif)
 
 - Users are also rewarded with gifts for "releasing" or deleting pets: when a pet is released, it awards an amount of gifts equal to its current level.
 - Upon releasing a pet at maximum level, the user is awarded with a feather, the current endgame incentive:
 
-![Get Feather](img\get-feather-gif.gif)
+![Get Feather](img/get-feather-gif.gif)
 
 [Return to Table of Contents](#table-of-contents)
 
 ## Screenshots
 
-![Celestial Dragon](img\celestial-SC.png)
+![Celestial Dragon](img/celestial-SC.png)
 
 - This is a Celestial Dragon. They are the rarest of the bunch and I think they look pretty cool. It takes some luck to find one though!
 
-![Help Page](img\help-screen.png)
+![Help Page](img/help-screen.png)
 
 - This is the "Help" page. Newly registered users are redirected to this page before they see the dashboard. Any user can revisit the "Help" page from the dashboard.
 
