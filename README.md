@@ -1,12 +1,9 @@
 # Creature Classes
-> Inspired by classic Tamogatchi and games like Webkins and Neopets, Creature Classes is a browser game about rescuing and rehabilitating mystical creatures. User spends gifts to collect pets and can interact with pets to acquire more gifts and  progress pet experience level.
 ## Table of Contents
 * [General Info](#general-information)
 * [Technologies Used](#technologies-used)
 * [Features](#features)
 * [Screenshots](#screenshots)
-* [Setup](#setup)
-* [Usage](#usage)
 * [Project Status](#project-status)
 * [Room for Improvement](#room-for-improvement)
 * [Acknowledgements](#acknowledgements)
@@ -15,11 +12,9 @@
 
 
 ## General Information
-- I undertook this project because I remember enjoying Tamogatchi as a kid and I thought it would be an engaging challenge make something like it while learning to use Django.
-- Provide general information about your project here.
-- What problem does it (intend to) solve?
-- What is the purpose of your project?
-<!-- You don't have to answer all the questions - just the ones relevant to your project. -->
+- I undertook this project because I remember enjoying Tamogatchi as a kid and I thought it would be an engaging challenge to make something like it while learning to use Django.
+- Inspired by classic Tamogatchi and games like Webkins and Neopets, Creature Classes is a browser game about rescuing and rehabilitating mystical creatures.
+- User spends gifts to collect pets and can interact with pets to acquire more gifts and progress pet experience level with an end goal of collecting feathers by "releasing" maximum level pets.
 
 
 ## Technologies Used
@@ -30,41 +25,71 @@
 
 
 ## Features
-- Currency system where player is given 10 gifts to start and may earn gifts via "play" interaction
-- When "rescuing" pets player is given 3 random pets to choose from with only their avatar photo and type and player must choose one.
-- Pets have a simple stat block with current level, health, energy, happiness, and experience
-- All 12 pets have different ranges for these statistics and a rarity weighting to match with the rarest pets having the best statistics.
+- Existing user logs in and is redirected to dashboard:
+
+<img src="img\login-gif.gif" alt="login-to-dashboard-gif"/>
+
+- User can spend 5 "gifts" to "rescue" a pet:
+
+<img src="img\rescue-gif.gif" alt="rescue-pet-gif"/>
+
+- When "rescuing" pets user is given 3 random pets to choose from with only their avatar photo and type.  User must choose one.
+- All 12 pet types have different ranges for these statistics and a rarity weighting to match with the rarest pets having the best statistics.
+
+- User can change the pet's name from the dashboard:
+
+<img src="img\edit-name-gif.gif" alt="edit-name-gif"/>
+
+- Upon confirmation, user is redirected to the "visit" screen where the pet is displayed along with its name, stats, and a gif to indicate its mood: 
+
+
+<img src="img\pet-screen-gif.gif" alt="pet-screen-gif"/>
+
+- Pets have a simple stat block with current level, health, energy, happiness, and experience.
+- Users can influence these statistics by interacting with the pet via either the "train" or "play" actions so long as the pet has energy.
+- "Train" awards high experience, but reduces energy, health and happiness.
+- "Play" awards a small amount of experience, increased health and happiness, and has a high chance of giving the player a "gift".
+- Users can visit any pet in their collection from the dashboard:
+
+<img src="img\visit-gif.gif" alt="visit-gif"/>
+
+- User is also rewarded with gifts for "releasing" or deleting pets: when pet is released, it awards an amount of gifts equal to its current level.
+- Upon releasing a pet at maximum level, user is awarded with a feather, the current endgame incentive:
+
+<img src="img\get-feather-gif.gif" alt="get-feather-gif"/>
 
 
 ## Screenshots
-![Example screenshot](./img/screenshot.png)
-<!-- If you have screenshots you'd like to share, include them here. -->
+
+<img src="img\celestial-SC.png" alt="screenshot-of-celestial-dragon" width=1200/>
+
+- This is a Celestial Dragon.  They are the rarest of the bunch and I think they look pretty cool.  It takes some luck to find one though!
+
+<img src="img\help-screen.png" alt="screenshot-of-help-page" width=1200/>
+
+- This is the "Help" page.  Newly registered users are redirected to this page before they see the dashboard.  Any user can revisit the "Help" page from the dashboard.
+
 
 ## Project Status
-Project is: _in progress_ / _complete_ / _no longer being worked on_. If you are no longer working on it, provide reasons why.
+In Progress
 
 
 ## Room for Improvement
-Include areas you believe need improvement / could be improved. Also add TODOs for future development.
-
-Room for improvement:
-- Improvement to be done 1
-- Improvement to be done 2
-
-To do:
-- Feature to be added 1
-- Feature to be added 2
-
+TODO:
+- Polish front-end aesthetic
+- More functionality for pet over-time progression
+- Time differential calculations should be expanded and made more integral
+- Reduce reliance on rerouting
+- Add filter menu or search bar to make it easier to navigate pet list.
+- Add many-to-many for friend system
 
 ## Acknowledgements
-Give credit here.
-- This project was inspired by...
-- This project was based on [this tutorial](https://www.example.com).
-- Many thanks to...
-
+- Many thanks to [Benji Hix](https://github.com/benji-hix) for taking time out of his project week to make a logo for me.
+- Thanks to Google images for all of the pictures for the different pets.
+- Thanks to TA Lucky from Python stack at Coding Dojo for helping get time calculations working.
 
 ## Contact
-Created by [@flynerdpl](https://www.flynerd.pl/) - feel free to contact me!
+[LINKEDIN](https://www.linkedin.com/in/joshua-bliek/)
 
 
 <!-- Optional -->
